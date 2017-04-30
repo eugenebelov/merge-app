@@ -5,14 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { FileLoader } from './fileLoader/fileLoader.component';
-import { MergeView } from './mergeView/mergeView.component';
+import { Merge } from './merge/merge.component';
 import { ParsedResult } from './parsed/parsedResult.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FileLoader,
-    MergeView,
+    Merge,
     ParsedResult
   ],
   imports: [

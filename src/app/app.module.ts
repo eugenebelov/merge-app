@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { FileLoader } from './fileLoader/fileLoader.component';
+import { MergeView } from './mergeView/mergeView.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FileLoader,
+    MergeView
   ],
   imports: [
     BrowserModule,

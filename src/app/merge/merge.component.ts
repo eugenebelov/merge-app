@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { MergeService } from './merge.service';
+import { DiffService } from '../diffService/diff.service';
 
 @Component({
   selector: 'merge-view',
@@ -13,7 +14,8 @@ export class Merge {
 
   private subscription: Subscription;
 
-  constructor(private mergeService: MergeService) {}
+  constructor(private mergeService: MergeService,
+    private diffService: DiffService) {}
 
   public doMerge() {
     return "HAHAH";

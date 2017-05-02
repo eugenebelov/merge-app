@@ -5,12 +5,13 @@ import { Subscription } from 'rxjs/Subscription';
 import { Merge }  from './merge/merge.component';
 
 import { MergeService } from './merge/merge.service';
+import { DiffService } from './diffService/diff.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [MergeService]
+  providers: [MergeService, DiffService]
 })
 export class AppComponent {
   title = 'Merge files tool';
@@ -18,10 +19,10 @@ export class AppComponent {
   @ViewChild(Merge)
   private mrg: Merge;
 
-  constructor( private mergeService: MergeService ){}
+  // constructor( private mergeService: MergeService ){}
 
   public compare() {
-    this.mergeService.notifyOther({option: 'merge'});
+    // this.mergeService.notifyOther({option: 'merge'});
 
     console.log("YOPTA", this.mrg.doMerge());
   }

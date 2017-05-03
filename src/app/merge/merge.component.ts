@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component} from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { MergeService } from './merge.service';
 import { DiffService } from '../diffService/diff.service';
 
 @Component({
@@ -9,27 +8,14 @@ import { DiffService } from '../diffService/diff.service';
   templateUrl: './merge.component.html'
 })
 export class Merge {
-  titleSource = "Source";
-  titleTarget = "Target";
+  titleSource = 'Source';
+  titleTarget = 'Target';
+  sourceValue = 'Some \nSimple \nText Text \nFile';
+  targetValue = 'Another \nText Text \nFile \nWith \nAdditional \nLines';
 
-  private subscription: Subscription;
-
-  constructor(private mergeService: MergeService,
-    private diffService: DiffService) {}
+  constructor(private diffService: DiffService) {}
 
   public doMerge() {
-    return "HAHAH";
-  }
-
-  ngOnInit() {
-    this.subscription = this.mergeService.notifyObservable$.subscribe((res) => {
-      if (res.hasOwnProperty('option') && res.option === 'merge') {
-        console.log(this.doMerge());
-      }
-    });
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.diffService.make(this.sourceValue, this.targetValue);
   }
 }

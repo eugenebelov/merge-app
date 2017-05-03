@@ -1,0 +1,17 @@
+#merge-view {
+  display: flex;
+  flex-direction: row;
+}
+
+#merge-view .source-panel,
+#merge-view .target-panel {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+#merge-view .source-panel .ta-source,
+#merge-view .target-panel .ta-target{
+  font-size: 16px;
+  height: 200px;
+  width: 300px;
+}

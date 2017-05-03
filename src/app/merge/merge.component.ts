@@ -5,7 +5,8 @@ import { DiffService } from '../diffService/diff.service';
 
 @Component({
   selector: 'merge-view',
-  templateUrl: './merge.component.html'
+  templateUrl: './merge.component.html',
+  styleUrls: ['./merge.component.css']
 })
 export class Merge {
   titleSource = 'Source';

@@ -1,1 +1,18 @@
-<div id="result">Parsed</div>
+<div id="result">
+  <div class="">
+    <h4>Parsed:</h4>
+    <ul class="result-list">
+      <li *ngFor="let item of difference"
+        [class.deleted]="item.deleted"
+        [class.added]="item.added"
+        [class.modified]="item.modified"
+        [class.not-changed]="item.modified == false">
+        <span *ngIf='item.deleted'> - </span>
+        <span *ngIf='item.added'> + </span>
+        <span *ngIf='item.modified'> * </span>
+        <span *ngIf='item.modified == false'> &nbsp; </span>
+        <span class="value">{{item.value}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

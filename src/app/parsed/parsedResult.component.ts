@@ -5,13 +5,15 @@ import { DiffService } from '../diffService/diff.service';
 
 @Component({
   selector: 'parsed-result',
-  templateUrl: './parsedResult.component.html'
+  templateUrl: './parsedResult.component.html',
+  styleUrls: ['parsedResult.component.css']
 })
 export class ParsedResult {
   titleSource = "Source";
   titleTarget = "Target";
 
   private subscribeToDiff: Subscription;
+  private difference:Array<any>;
 
   constructor(private diffService: DiffService) {}
 
@@ -29,5 +31,6 @@ export class ParsedResult {
 
   private buildResult(diff:Array<any>) {
     console.debug('buildResult', diff);
+    this.difference = diff;
   }
 }

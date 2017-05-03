@@ -24,7 +24,8 @@ export class AppComponent {
   public compare() {
     // this.mergeService.notifyOther({option: 'merge'});
 
-    console.log("YOPTA", this.mrg.doMerge());
+    this.mrg.doMerge()
+    // console.log("YOPTA", this.mrg.doMerge());
   }
 
 }

@@ -19,13 +19,9 @@ export class DiffService {
 
     var differenceObject = this.findDiff(r1, r2);
 
-    // buildResultTree(differenceObject)
-
-  	console.log("Compared", differenceObject);
-
-    // if (differenceObject) {
-      // this.notify.next(differenceObject);
-    // }
+    if (differenceObject) {
+      this.notify.next({ difference: differenceObject });
+    }
   }
 
   private makeDataForDiff(val: string):Array<string> {

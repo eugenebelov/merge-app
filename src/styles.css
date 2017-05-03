@@ -1,17 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-#merge-view div {
-  display: inline-block;
+body {
+  font-family: 'Arial';
 }
 
-#merge-view .source-panel,
-#merge-view .target-panel {
+input[type="button"] {
+  padding: 6px 13px 8px;
+  background-color: #F5F5F5;
   border: 1px solid #000;
-  padding: 10px;
-}
-
-#merge-view .source-panel .ta-source,
-#merge-view .target-panel .ta-target{
-  font-size: 16px;
-  height: 200px;
-  width: 400px;
+  font-size: 14px;
 }

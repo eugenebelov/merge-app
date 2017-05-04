@@ -12,22 +12,32 @@ export class DiffService {
 
   constructor(){}
 
+  /**
+    Collect result into diffObj and notify subscriber
+  */
   public make(elementSourceValue: string, elementTargetValue: string) {
 
-    var r1 = this.makeDataForDiff(elementSourceValue);
-    var r2 = this.makeDataForDiff(elementTargetValue);
+    var diff1 = this.makeDataForDiff(elementSourceValue);
+    var diff2 = this.makeDataForDiff(elementTargetValue);
 
-    var differenceObject = this.findDiff(r1, r2);
+    var differenceObject = this.findDiff(diff1, diff2);
 
     if (differenceObject) {
       this.notify.next({ difference: differenceObject });
     }
   }
 
+  /**
+    Process string from input data from textarea into Array
+  */
   private makeDataForDiff(val: string):Array<string> {
     return val.split('\n').map(function(item) { return item.trim() } );
   }
 
+  /**
+    Mark compared items as [modified, deleted, added, non-modified],
+    regarding conditions
+  */
   private compareResults(source: Array<string>, target: Array<string>) {
     if(source.length > target.length) {
     	return source.map(function(item, index) {
@@ -60,6 +70,9 @@ export class DiffService {
     }
   }
 
+  /**
+    Diff algorythm
+  */
   private findDiff(source: Array<any>, target: Array<any>): Array<any> {
     var result: Array<any> = [];
     var tempS1 = [];
@@ -90,6 +103,10 @@ export class DiffService {
     return result;
   }
 
+  /**
+    Mark item object with signs regarding it's state
+    note: not using now, cause it was done inside component template
+  */
   private markItems(param: any): string {
     if(param.modified != undefined && param.modified) return " * ";
     if(param.modified != undefined && !param.modified) return " &nbsp; ";

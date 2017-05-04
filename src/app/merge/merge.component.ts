@@ -11,11 +11,14 @@ import { DiffService } from '../diffService/diff.service';
 export class Merge {
   titleSource = 'Source';
   titleTarget = 'Target';
-  sourceValue = 'Some \nSimple \nText Text \nFile';
-  targetValue = 'Another \nText Text \nFile \nWith \nAdditional \nLines';
+  sourceValue = '';
+  targetValue = '';
 
   constructor(private diffService: DiffService) {}
 
+  /**
+    Run method of diffService and start Observable stream inside it
+  */
   public doMerge() {
     this.diffService.make(this.sourceValue, this.targetValue);
   }

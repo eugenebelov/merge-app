@@ -30,7 +30,6 @@ export class ParsedResult {
   }
 
   private buildResult(diff:Array<any>) {
-    console.debug('buildResult', diff);
     this.difference = diff;
   }
 }

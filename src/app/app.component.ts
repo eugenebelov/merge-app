@@ -19,13 +19,8 @@ export class AppComponent {
   @ViewChild(Merge)
   private mrg: Merge;
 
-  // constructor( private mergeService: MergeService ){}
-
   public compare() {
-    // this.mergeService.notifyOther({option: 'merge'});
-
-    this.mrg.doMerge()
-    // console.log("YOPTA", this.mrg.doMerge());
+    this.mrg.doMerge();
   }
 
 }
